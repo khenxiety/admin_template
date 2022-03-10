@@ -1,0 +1,18 @@
+
+  
+
+
+<div class="container-fluid px-0">
+<mat-sidenav-container>
+  <mat-sidenav #SideNav mode="side" [(opened)]="opened" (opened)="events.push('open!') " (closed)="events.push('close!')">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+ <app-toolbar [inputSideNav]="SideNav"></app-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+
