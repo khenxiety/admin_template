@@ -3,8 +3,8 @@
 
 
 <div class="container-fluid px-0">
-<mat-sidenav-container>
-  <mat-sidenav #SideNav mode="side" [(opened)]="opened" (opened)="events.push('open!') " (closed)="events.push('close!')">
+<mat-sidenav-container >
+  <mat-sidenav style="border: none; height: 100vh;" #SideNav mode="side" [(opened)]="opened" (opened)="events.push('open!') " (closed)="events.push('close!')">
     <app-sidebar></app-sidebar>
   </mat-sidenav>
 

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AdminDashboardComponent } from './pages/dashboard/dashboard.component';
 import { AccountsComponent } from './pages/accounts/accounts.component';
 import { RecordsComponent } from './pages/records/records.component';
 
@@ -19,17 +19,104 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
-//import {BrowserAnimationsModule} from 
-    //'@angular/platform-browser/animations';
-//import { FormsModule } from '@angular/forms';
-//import { MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { DataTable1Component } from './data-tables/data-table1/data-table1.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { DataTable2Component } from './data-tables/data-table2/data-table2.component';
+import { JobPersonnelComponent } from './pages/job-personnel/job-personnel.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
+import { JobPersonnelPersonalComponent } from './pages/job-personnel-personal/job-personnel-personal.component';
+import { JobPersonnelEducationComponent } from './pages/job-personnel-education/job-personnel-education.component';
+import { FacultyPersonalComponent } from './pages/faculty-personal/faculty-personal.component';
+import { FacultyEducationComponent } from './pages/faculty-education/faculty-education.component';
+
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddEmployeeComponent } from './modals/add-employee/add-employee.component';
+import { FacultyPersonalInfoComponent } from './data-tables/faculty-personal-info/faculty-personal-info.component';
+import { FacultyDegreeTableComponent } from './data-tables/faculty-degree-table/faculty-degree-table.component';
+import { PersonnelPersonalTableComponent } from './data-tables/personnel-personal-table/personnel-personal-table.component';
+import { PersonnelDegreeTableComponent } from './data-tables/personnel-degree-table/personnel-degree-table.component';
+import { FilterModalComponent } from './modals/filter-modal/filter-modal.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { UpdateEmployeeComponent } from './modals/update-employee/update-employee.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { getAuth,provideAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { AddPersonnelComponent } from './modals/add-personnel/add-personnel.component';
+import { DeleteJobpersonnelComponent } from './modals/delete-jobpersonnel/delete-jobpersonnel.component';
+import { DeleteFacultyComponent } from './modals/delete-faculty/delete-faculty.component';
+import { FacultyTemporaryAlldataComponent } from './data-tables/faculty-temporary-alldata/faculty-temporary-alldata.component';
+import { FacultyTemporaryPersonalComponent } from './data-tables/faculty-temporary-personal/faculty-temporary-personal.component';
+import { FacultyTemporaryDegreeComponent } from './data-tables/faculty-temporary-degree/faculty-temporary-degree.component';
+import { FacultyGuestAlldataComponent } from './data-tables/faculty-guest-alldata/faculty-guest-alldata.component';
+import { FacultyGuestPersonalComponent } from './data-tables/faculty-guest-personal/faculty-guest-personal.component';
+import { FacultyGuestDegreeComponent } from './data-tables/faculty-guest-degree/faculty-guest-degree.component';
+import { JobpersonnelTemporaryAlldataComponent } from './data-tables/jobpersonnel-temporary-alldata/jobpersonnel-temporary-alldata.component';
+import { JobpersonnelTemporaryPersonalComponent } from './data-tables/jobpersonnel-temporary-personal/jobpersonnel-temporary-personal.component';
+import { JobpersonnelTemporaryDegreeComponent } from './data-tables/jobpersonnel-temporary-degree/jobpersonnel-temporary-degree.component';
+import { JobpersonnelOrdersAlldataComponent } from './data-tables/jobpersonnel-orders-alldata/jobpersonnel-orders-alldata.component';
+import { JobpersonnelOrdersPersonalComponent } from './data-tables/jobpersonnel-orders-personal/jobpersonnel-orders-personal.component';
+import { JobpersonnelOrdersDegreeComponent } from './data-tables/jobpersonnel-orders-degree/jobpersonnel-orders-degree.component';
+import { ViewFacultyComponent } from './modals/view-faculty/view-faculty.component';
+import { AddFacultyComponent } from './pages/add-faculty/add-faculty.component';
+import { ViewJobpersonnelComponent } from './pages/view-jobpersonnel/view-jobpersonnel.component';
+
+
+
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    AdminDashboardComponent,
     AccountsComponent,
     RecordsComponent,
-    LoginComponent
+    LoginComponent,
+    DataTable1Component,
+    DataTable2Component,
+    JobPersonnelComponent,
+    JobPersonnelPersonalComponent,
+    JobPersonnelEducationComponent,
+    FacultyPersonalComponent,
+    FacultyEducationComponent,
+    AddEmployeeComponent,
+    FacultyPersonalInfoComponent,
+    FacultyDegreeTableComponent,
+    PersonnelPersonalTableComponent,
+    PersonnelDegreeTableComponent,
+    FilterModalComponent,
+    SettingsComponent,
+    UpdateEmployeeComponent,
+    AddPersonnelComponent,
+    DeleteJobpersonnelComponent,
+    DeleteFacultyComponent,
+    FacultyTemporaryAlldataComponent,
+    FacultyTemporaryPersonalComponent,
+    FacultyTemporaryDegreeComponent,
+    FacultyGuestAlldataComponent,
+    FacultyGuestPersonalComponent,
+    FacultyGuestDegreeComponent,
+    JobpersonnelTemporaryAlldataComponent,
+    JobpersonnelTemporaryPersonalComponent,
+    JobpersonnelTemporaryDegreeComponent,
+    JobpersonnelOrdersAlldataComponent,
+    JobpersonnelOrdersPersonalComponent,
+    JobpersonnelOrdersDegreeComponent,
+    ViewFacultyComponent,
+    AddFacultyComponent,
+    ViewJobpersonnelComponent,
+   
    
   ],
   imports: [
@@ -43,7 +130,24 @@ import { LoginComponent } from './pages/login/login.component';
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    HttpClientModule,
+    CommonModule,
+    ToastrModule.forRoot(),
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: tokenGetter
+        
+      }
+    }),
+    MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase())
     
 
 

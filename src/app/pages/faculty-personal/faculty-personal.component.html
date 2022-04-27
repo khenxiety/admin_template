@@ -1,0 +1,84 @@
+<div class="main" style="height: 100vh;">
+    <div class="page-title d-flex align-items-center" >
+        
+        <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: rgb(44, 44, 44)">space_dashboard</mat-icon>
+       
+        <span>Admin / Faculty List / Temporary</span>
+    </div>
+    <br>
+    <div class="title">
+        
+        <h2 style="margin: 0;">Faculty List (Temporary)</h2>
+      </div>
+
+    
+      <div class="container-fluid px-0 mt-3">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="nav-home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-a"
+              type="button"
+              role="tab"
+              aria-controls="form-a"
+              aria-selected="false"
+            >
+            Form A
+            </button>
+            <button
+              class="nav-link"
+              id="nav-add-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-b"
+              type="button"
+              role="tab"
+              aria-controls="form-b"
+              aria-selected="false"
+            >
+              Form B
+            </button>
+            <button
+              class="nav-link"
+              id="nav-add-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-c"
+              type="button"
+              role="tab"
+              aria-controls="form-c"
+              aria-selected="false"
+            >
+              Form C
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active  bg-white py-2 " id="form-a" role="tabpanel" aria-labelledby="form-a">
+    
+    
+               <app-faculty-temporary-alldata></app-faculty-temporary-alldata>
+    
+    
+            </div>
+            <div class="tab-pane fade show bg-white py-2" id="form-b" role="tabpanel" aria-labelledby="form-b">
+    
+    
+               <app-faculty-temporary-personal></app-faculty-temporary-personal>
+    
+    
+            </div>
+            <div class="tab-pane fade show bg-white py-2" id="form-c" role="tabpanel" aria-labelledby="form-c">
+    
+    
+                <app-faculty-temporary-degree></app-faculty-temporary-degree>
+     
+     
+             </div>
+    
+        </div>
+      </div>
+      
+    
+</div>
+

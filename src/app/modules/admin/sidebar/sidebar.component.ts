@@ -12,4 +12,10 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  signout(){
+    localStorage.removeItem('token');
+    window.location.reload();
+  }
+
 }

@@ -1,165 +1,114 @@
 
-<div class="side-bar d-flex flex-column flex-shrink-0 p-4 text-dark" style="width: 280px;">
+<div class="side-bar d-flex flex-column flex-shrink-0 p-2 text-dark" style="width: 320px;">
+  <div class="sidebar rounded p-3 text-white" style="height: 100%; background-color: #ff3e3e;">
     <a href="/" class="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <img class="logo" src="././assets/logo.png" alt="">
-      <span class="fs-4 ml-5">Admin Panel</span>
+      
+      <span class="fs-4 ml-5 text-white">Admin Dashboard</span>
       
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active text-dark" aria-current="page">
+        <a routerLink="./admin-dash" routerLinkActive="active" class="nav-link text-white" aria-current="page">
         <mat-icon class="menu-icons" aria-hidden="false" aria-label="Example home icon">space_dashboard</mat-icon>
-         <span class="menu"> About us</span>
+         <span class="menu"> Dashboard</span>
         </a>
       </li>
+      <!-- <li>
+        <a routerLink="./faculty-list" routerLinkActive="active" class="nav-link text-white">
+            <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">supervised_user_circle</mat-icon>
+            <span class="menu">Faculty List</span>
+        </a>
+      </li> -->
+      <div class="accordion text-white" id="faculty-list" >
+        <div class="accordion-item text-white">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button text-whitecollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faculty" aria-expanded="false" aria-controls="collapseThree">
+              <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">supervised_user_circle</mat-icon>
+              <span class="menu text-white">Faculty List</span>
+            </button>
+          </h2>
+          <div id="faculty" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faculty-list">
+            <div class="accordion-body">
+            <li class="nav-item">
+                  <a class="nav-link accordion-link text-white" routerLink="./faculty-list/all-info" routerLinkActive="active">
+                    <span>Permanent Teaching Staff</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link accordion-link text-white" routerLink="./faculty-list/personal-info" routerLinkActive="active">
+                    <span>Temporary Teaching Staff</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link accordion-link text-white" routerLink="./faculty-list/higher-education" routerLinkActive="active">
+                    <span>Guest Lecturer</span>
+                  </a>
+                </li>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <li>
+        <a routerLink="./job-personnel-list" routerLinkActive="active" class="nav-link text-white">
+            <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">supervised_user_circle</mat-icon>
+            <span class="menu">Job Personnel List</span>
+        </a>
+
+      </li> -->
+      <div class="accordion text-white" id="job-personnel-list" >
+        <div class="accordion-item text-white">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button text-whitecollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#job" aria-expanded="false" aria-controls="collapseThree">
+              <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">supervised_user_circle</mat-icon>
+
+                <span class="menu text-white">Job Personnel List</span>
+            </button>
+          </h2>
+          <div id="job" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#job-personnel-list">
+            <div class="accordion-body">
+            <li class="nav-item">
+                  <a class="nav-link accordion-link text-white" routerLink="./job-personnel-list/all-info" routerLinkActive="active">
+                    <span>Permanent Non teaching</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link accordion-link text-white" routerLink="./job-personnel-list/personal-info" routerLinkActive="active">
+                    <span>Casual Non Teaching</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link accordion-link text-white" routerLink="./job-personnel-list/higher-education" routerLinkActive="active">
+                    <span>Job Orders</span>
+                  </a>
+                </li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <li>
-        <a href="#" class="nav-link text-dark">
-            <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">folder</mat-icon>
-            <span class="menu">Records</span>
+        <a routerLink="./settings" routerLinkActive="active" class="nav-link text-white">
+            <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+          <span class="menu">Settings</span>
         </a>
       </li>
-      <div class="accordion text-dark" id="taxCollectionAccordion" >
-        <div class="accordion-item text-dark">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                 <mat-icon   class="menu-icons" aria-hidden="false" aria-label="Example home icon">note</mat-icon>
-                <span class="menu">Services</span>
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#taxCollectionAccordion">
-            <div class="accordion-body">
-            <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>Programs</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>Consultants</span>
-                  </a>
-                </li>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion text-dark" id="taxCollectionAccordion" >
-        <div class="accordion-item text-dark">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#infrastructure" aria-expanded="false" aria-controls="collapseThree">
-                 <mat-icon   class="menu-icons" aria-hidden="false" aria-label="Example home icon">note</mat-icon>
-                <span class="menu">Infrastructure</span>
-            </button>
-          </h2>
-          <div id="infrastructure" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#taxCollectionAccordion">
-            <div class="accordion-body">
-            <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>TBI</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>Research and Devt Facilities</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>Shared Services Facilities</span>
-                  </a>
-                </li>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion text-dark" id="taxCollectionAccordion" >
-        <div class="accordion-item text-dark">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#academia" aria-expanded="false" aria-controls="collapseThree">
-                 <mat-icon   class="menu-icons" aria-hidden="false" aria-label="Example home icon">note</mat-icon>
-                <span class="menu">Academia</span>
-            </button>
-          </h2>
-          <div id="academia" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#taxCollectionAccordion">
-            <div class="accordion-body">
-            <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>HEI</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>Researchers</span>
-                  </a>
-                </li>
-                
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion text-dark" id="taxCollectionAccordion" >
-        <div class="accordion-item text-dark">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#industry" aria-expanded="false" aria-controls="collapseThree">
-                 <mat-icon   class="menu-icons" aria-hidden="false" aria-label="Example home icon">note</mat-icon>
-                <span class="menu">Industry</span>
-            </button>
-          </h2>
-          <div id="industry" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#taxCollectionAccordion">
-            <div class="accordion-body">
-            <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>MSME</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>Priority Sectors</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">
-                    <span>Economic Zones</span>
-                  </a>
-                </li>
-                
-            </div>
-          </div>
-        </div>
-      </div>
+
+     
       <li>
-        <a href="#" class="nav-link text-dark">
-            <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">payment</mat-icon>
-          <span class="menu">Payment</span>
+        <a (click)="signout()" class="nav-link text-white " style="cursor: pointer;">
+            <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">subdirectory_arrow_right</mat-icon>
+          <span class="menu">Sign Out</span>
         </a>
       </li>
       
-        <div class="accordion text-dark" id="taxCollectionAccordion" >
-          <div class="accordion-item text-dark">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Utilities" aria-expanded="false" aria-controls="collapseThree">
-                <mat-icon  class="menu-icons" aria-hidden="false" aria-label="Example home icon">build</mat-icon>
-                <span class="menu">Settings</span>
-              </button>
-            </h2>
-            <div id="Utilities" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#taxCollectionAccordion">
-              <div class="accordion-body">
-              <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">
-                      <span>Manage Profile</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">
-                      <span>Page Roles</span>
-                    </a>
-                  </li>
-              </div>
-            </div>
-          </div>
-        </div>
+
     
     
     </ul>
 
+
+  </div>
+    
   </div>

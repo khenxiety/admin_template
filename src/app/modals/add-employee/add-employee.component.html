@@ -1,0 +1,559 @@
+<h1 mat-dialog-title>Add Employee</h1>
+
+<mat-dialog-content>
+  <form action="">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">FullName:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              [(ngModel)]="name"
+              class="form-control"
+              placeholder="LASTNAME, FIRSTNAME MIDDLENAME"
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-control"
+              placeholder="Email"
+              [(ngModel)]="email"
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Baccalaureate: </label>
+            <input
+              type="text"
+              name="baccalaureate"
+              id="baccalaureate"
+              class="form-control"
+              placeholder="Baccalaureate"
+              [(ngModel)]="baccalaureate"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Ba Spec: </label>
+            <input
+              type="text"
+              name="baSpec"
+              id="baSpec"
+              class="form-control"
+              placeholder="Ba Spec"
+              [(ngModel)]="ba_spec"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row my-2">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Age:</label>
+            <input
+              type="text"
+              name="age"
+              id="age"
+              class="form-control"
+              placeholder="Age"
+              [(ngModel)]="age"
+              class="form-control w-25"
+              placeholder="Age"
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Sex:</label>
+            <select
+              name="sex"
+              id="sex"
+              [(ngModel)]="sex"
+              class="form-select w-25"
+            >
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group d-flex" >
+            <div class="school-grad w-100">
+              <label for="">School and Year Graduated (Baccalaureate): </label>
+            <input
+              type="text"
+              name="schoolGraduated"
+              id="schoolGraduated"
+              class="form-control "
+              placeholder="School Graduated"
+              [(ngModel)]="school_graduated"
+              class="form-control"
+            />
+
+            </div>
+            <div class="year-grad" style="display: flex; align-items: flex-end;">
+              <input
+              type="text"
+              name="schoolGraduated"
+              id="schoolGraduated"
+              class="form-control"
+              placeholder="Year "
+              [(ngModel)]="year1"
+              class="form-control"
+              style="width: 50%;"
+              maxlength="4"
+            />
+
+            </div>
+            
+            
+           
+          </div>
+          
+
+          
+          
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Civil Status:</label>
+            <!-- <input
+              type="text"
+              name="civilStatus"
+              id="civilStatus"
+              class="form-control"
+              placeholder="Civil Status"
+              [(ngModel)]="civil_status"
+              class="form-control"
+            /> -->
+            <select name="civilStatus" id="civilStatus" placeholder="Civil Status"
+            [(ngModel)]="civil_status" class="form-select">
+           
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Widowed">Widowed</option>
+            <option value="Widowed">Separated</option>
+
+
+          
+          </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Educational Attainment:</label>
+            <input
+              type="text"
+              name="educationalAttainment"
+              id="educationalAttainment"
+              class="form-control"
+              placeholder="Educational Attainment"
+              [(ngModel)]="educational_attainment"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Masters: </label>
+            <input
+              type="text"
+              name="masters"
+              id="masters"
+              class="form-control"
+              placeholder="Masters"
+              [(ngModel)]="masters"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Ma Spec: </label>
+            <input
+              type="text"
+              name="maSpec"
+              id="maSpec"
+              class="form-control"
+              placeholder="Ma Spec"
+              [(ngModel)]="ma_spec"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Date of Original Appointment: </label>
+            <input
+              type="date"
+              name="dateOfOriginalAppointment"
+              id="dateOfOriginalAppointment"
+              class="form-control"
+              placeholder="Date of Original Appointment"
+              [(ngModel)]="date_of_original_Appointment"
+              class="form-control"
+            />
+        
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Teaching Load:</label>
+            <input
+              type="text"
+              name="teachingLoad"
+              id="teachingLoad"
+              class="form-control"
+              placeholder="Teaching Load"
+              [(ngModel)]="teaching_load"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group d-flex" >
+            <div class="school-grad w-100">
+              <label for="">School and Year Graduated (Masters): </label>
+            <input
+              type="text"
+              name="schoolGraduated"
+              id="schoolGraduated"
+              class="form-control "
+              placeholder="School Graduated"
+              [(ngModel)]="school_graduated2"
+              class="form-control"
+            />
+
+            </div>
+            <div class="year-grad " style="display: flex; align-items: flex-end;">
+              <input
+              type="text"
+              name="schoolGraduated"
+              id="schoolGraduated"
+              class="form-control"
+              placeholder="Year "
+              [(ngModel)]="year2"
+              class="form-control"
+              style="width: 50%;"
+              maxlength="4"
+            />
+
+            </div>
+            
+            
+           
+          </div>
+          
+
+          
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Rank:</label>
+            <!-- <input
+              type="text"
+              name="rank"
+              id="rank"
+              class="form-control"
+              placeholder="Rank"
+              [(ngModel)]="rank"
+              class="form-control"
+            /> -->
+
+            <select name="rank" id="rank faculty" [(ngModel)]="rank" class="form-select">
+            
+              <option value="Instructor I">Instructor I</option>
+              <option value="Instructor II">Instructor II</option>
+              <option value="Instructor III">Instructor III</option>
+              <option value="Assistant Professor I">Assistant Professor I</option>
+              <option value="Assistant Professor II">Assistant Professor II</option>
+              <option value="Assistant Professor III">Assistant Professor III</option>
+              <option value="Associate Professor IV">Associate Professor IV</option>
+              <option value="Associate Professor I">Associate Professor I</option>
+              <option value="Associate Professor II">Associate Professor II</option>
+              <option value="Associate Professor III">Associate Professor III</option>
+              <option value="Associate Professor IV">Associate Professor IV</option>
+              <option value="Associate Professor V">Associate Professor V</option>
+
+              <option value="Professor I">Professor I</option>
+              <option value="Professor II">Professor II</option>
+              <option value="Professor III">Professor III</option>
+              <option value="Professor IV">Professor IV</option>
+              <option value="Professor V">Professor V</option>
+              <option value="Professor VI">Professor VI</option>
+              <option value="Lecturer I">Lecturer I </option>
+              <option value="Lecturer II">Lecturer II</option>
+              <option value="Lecturer III">Lecturer III</option>
+              <option value="Lecturer IV">Lecturer IV</option>
+              <option value="Lecturer V">Lecturer V</option>
+              <option value="Lecturer VI">Lecturer VI</option>
+              <option value="Lecturer VII">Lecturer VII</option>
+              <option value="Senior Lecturer I">Senior Lecturer I </option>
+              <option value="Senior Lecturer II">Senior Lecturer II</option>
+              <option value="Senior Lecturer III">Senior Lecturer III</option>
+              <option value="Senior Lecturer IV">Senior Lecturer IV</option>
+              <option value="Senior Lecturer V">Senior Lecturer V</option>
+
+
+
+
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Professional Licensure Earned: </label>
+            <input type="text"
+                name="professionalLicensureEarned"
+                id="professionalLicensureEarned"
+                class="form-control"
+                placeholder="Professional Licensure Earned"
+                [(ngModel)]="professional_licensure_earned"
+               
+             class="form-control" />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Doctorate: </label>
+            <input type="text" 
+                name="doctorate"
+                id="doctorate"
+                class="form-control"
+                placeholder="Doctorate"
+                [(ngModel)]="doctorate"
+                class="form-control" />
+           
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Ph. D. Spec.: </label>
+            <input type="text"
+                name="phdSpec"
+                id="phdSpec"
+                class="form-control"
+                placeholder="Ph. D. Spec."
+                [(ngModel)]="Ph_D_Spec"
+                class="form-control" />
+             
+          </div>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">FT or PT: </label>
+            <select
+              name="FT_or_PT"
+              id="FT_or_PT"
+                [(ngModel)]="ft_or_tp"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Full Time or Part Time"
+              class="form-select"
+            >
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Subjects Taught: </label>
+            <input type="text"
+                name="subjectsTaught"
+                id="subjectsTaught"
+                class="form-control"
+                placeholder="Subjects Taught"
+                [(ngModel)]="subjects_Taught"
+                class="form-control" />
+          
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group d-flex" >
+            <div class="school-grad w-100">
+              <label for="">School and Year Graduated (Doctorate): </label>
+            <input
+              type="text"
+              name="schoolGraduated"
+              id="schoolGraduated"
+              class="form-control "
+              placeholder="School Graduated"
+              [(ngModel)]="school_graduated3"
+              class="form-control"
+            />
+
+            </div>
+            <div class="year-grad " style="display: flex; align-items: flex-end;">
+              <input
+              type="text"
+              name="schoolGraduated"
+              id="schoolGraduated"
+              class="form-control"
+              placeholder="Year"
+              [(ngModel)]="year3"
+              class="form-control"
+              style="width: 50%;"
+              maxlength="4"
+            />
+
+            </div>
+            
+            
+           
+          </div>
+          
+
+          
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Date of Birth: </label>
+            <input type="date"
+                name="dateOfBirth"
+                id="dateOfBirth"
+                class="form-control"
+                placeholder="Date of Birth"
+                [(ngModel)]="date_of_birth"
+                class="form-control" />
+          
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Department: </label>
+            <input type="text"
+                name="department"
+                id="department"
+                class="form-control"
+                placeholder="Department"
+                [(ngModel)]="department"
+                class="form-control" />
+            
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Type: </label>
+            <select name="Type" id="Type"
+                [(ngModel)]="type"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Type"
+                class="form-select"
+             class="form-select">
+              <option value="teaching-staff">Teaching Staff</option>
+              <option value="non teaching-staff">Non-Teaching Staff</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Category: </label>
+            <select name="sub_type" id="sub_type"
+                [(ngModel)]="sub_type"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Type"
+                class="form-select">
+              <option value="permanent">Permanent</option>
+              <option value="temporary">Temporary</option>
+              <option value="guest lecturer">Guest Lecturer</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Place of Origin:</label>
+            <input type="text"
+                name="placeOfOrigin"
+                id="placeOfOrigin"
+                class="form-control"
+                placeholder="Place of Origin"
+                [(ngModel)]="place_of_origin"
+                class="form-control" />
+           
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Annual Salary:</label>
+            <input type="text"
+                name="annualSalary"
+                id="annualSalary"
+                class="form-control"
+                placeholder="Annual Salary"
+                [(ngModel)]="annual_salary"
+                class="form-control" />
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Tenure of Appointment:</label>
+            <input type="text"
+                name="tenureOfAppointment"
+                id="tenureOfAppointment"
+                class="form-control"
+                placeholder="Tenure of Appointment"
+                [(ngModel)]="tenure_of_appointment"
+                class="form-control" />
+            
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Year of Service:</label>
+            <input type="text"
+                name="yearOfService"
+                id="yearOfService"
+                class="form-control"
+                placeholder="Year of Service"
+                [(ngModel)]="year_of_service"
+                class="form-control" />
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close class="btn-primary">Close</button>
+  <button mat-raised-button (click)="addEmployee()" class="btn-success">
+    Save
+  </button>
+</mat-dialog-actions>

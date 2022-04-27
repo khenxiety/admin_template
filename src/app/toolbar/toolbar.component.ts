@@ -11,9 +11,23 @@ export class ToolbarComponent implements OnInit {
   inputSideNav!: MatSidenav;
 
 
-  constructor() { }
+  username:any;
+
+
+  constructor() { 
+
+
+    this.username=localStorage.getItem('name');
+  }
 
   ngOnInit(): void {
+    
+  }
+
+
+  logout(){
+    localStorage.removeItem('token');
+    window.location.reload();
   }
 
 }

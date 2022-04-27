@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bsu-employee-management": {
+      "hosting": {
+        "test_project": [
+          "bsu-employee-management"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bsu-employee-management"
+  }
+}

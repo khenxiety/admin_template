@@ -1,0 +1,462 @@
+<div class="main" style="height: 100vh">
+    <div class="page-title d-flex align-items-center">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        style="color: rgb(44, 44, 44)"
+        >space_dashboard</mat-icon
+      >
+  
+      <span>Admin / Job Personnel List / Profile</span>
+    </div>
+    <br />
+    <div class="title">
+      <h2 style="margin: 0">Job Personnel Profile</h2>
+    </div>
+  
+    <div class="container-fluid px-0 mt-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Page title -->
+  
+            <!-- Form START -->
+            <form class="file-upload" *ngFor="let dt of data">
+              <div class="row mb-5 gx-5">
+                <!-- Contact detail -->
+                <div class="col-xxl-8 mb-5 mb-xxl-0">
+                  <div class="bg-secondary-soft px-4 py-5 rounded">
+                    <div class="row g-3">
+                      <h4 class="mb-4 mt-0">Personal Information</h4>
+                      <!-- First Name -->
+                      <div class="col-md-6">
+                        <label class="form-label">Full Name *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="First name"
+                          name="name"
+                          [value]="dt.name"
+                          style="text-transform: uppercase;"
+                          disabled
+                        />
+                      </div>
+                      <!-- Last name -->
+                      <div class="col-md-6">
+                        <label class="form-label">Civil Status *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Last name"
+                          [value]="dt.civil_status"
+  
+                          disabled
+                        />
+                      </div>
+                      <!-- Phone number -->
+                      <div class="col-md-6">
+                        <label class="form-label">Age *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Phone number"
+                          [value]="dt.age"
+                          disabled
+                        />
+                      </div>
+                      <!-- Mobile number -->
+                      <div class="col-md-6">
+                        <label class="form-label">Sex *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Phone number"
+                          [value]="dt.sex"
+  
+                          disabled
+                        />
+                      </div>
+                      <!-- Email -->
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label"
+                          >Email *</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="inputEmail4"
+                          [value]="dt.email"
+                          disabled
+                        />
+                      </div>
+                      <!-- Skype -->
+                      <div class="col-md-6">
+                        <label class="form-label">Date of Birth *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Phone number"
+                          [value]="dt.date_of_birth"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <!-- Row END -->
+                  </div>
+                </div>
+                <!-- Upload profile -->
+              </div>
+              <!-- Row END -->
+  
+              <!-- Social media detail -->
+              <div class="row mb-5 gx-5">
+                <div class="col-xxl-6 mb-5 mb-xxl-0">
+                  <div class="bg-secondary-soft px-4 py-5 rounded">
+                    <div class="row g-3">
+                      <h4 class="mb-4 mt-0">Employee detail</h4>
+                      <!-- Facebook -->
+                      <div class="col-md-12">
+                        <label class="form-label"
+                          ><i class="fab fa-fw fa-facebook me-2 text-facebook"></i
+                          >Educational Attainment *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Facebook"
+                          [value]="dt.educational_attainment"
+                          disabled
+                        />
+                      </div>
+                      <!-- Twitter -->
+  
+                      <!-- Linkedin -->
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i
+                            class="fab fa-fw fa-linkedin-in text-linkedin me-2"
+                          ></i
+                          >Date of Original Appointment *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Linkedin"
+                          [value]="dt.date_of_original_Appointment"
+                          disabled
+                        />
+                      </div>
+                      <!-- Instragram -->
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i
+                            class="fab fa-fw fa-instagram text-instagram me-2"
+                          ></i
+                          >Teaching Load *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Instragram"
+                          [value]="dt.teaching_load"
+                          disabled
+                        />
+                      </div>
+                      <!-- Dribble -->
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i
+                            class="fas fa-fw fa-basketball-ball text-dribbble me-2"
+                          ></i
+                          >Rank *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Dribble"
+                          [value]="dt.rank"
+                          disabled
+                        />
+                      </div>
+                      <!-- Pinterest -->
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                          >FT or PT *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Pinterest"
+                          [value]="dt.FT_or_PT"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6">
+                          <label class="form-label"
+                            ><i
+                              class="fas fa-fw fa-basketball-ball text-dribbble me-2"
+                            ></i
+                            >Place of Assignment *</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder=""
+                            aria-label="Dribble"
+                            [value]="dt.place_of_assignment"
+                            disabled
+                          />
+                        </div>
+                        <!-- Pinterest -->
+                        <div class="col-md-6">
+                          <label class="form-label"
+                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                            >Department *</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder=""
+                            aria-label="Pinterest"
+                            [value]="dt.department"
+                            disabled
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label"
+                            ><i
+                              class="fas fa-fw fa-basketball-ball text-dribbble me-2"
+                            ></i
+                            >Employee Type *</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder=""
+                            aria-label="Dribble"
+                            [value]="dt.type"
+                            disabled
+                          />
+                        </div>
+                        <!-- Pinterest -->
+                        <div class="col-md-6">
+                          <label class="form-label"
+                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                            >Category *</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder=""
+                            aria-label="Pinterest"
+                            [value]="dt.sub_type"
+                            disabled
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label"
+                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                            >Annual Salary *</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder=""
+                            aria-label="Pinterest"
+                            [value]="dt.annual_Salary"
+                            disabled
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label"
+                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                            >Tenure of Appointment *</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder=""
+                            aria-label="Pinterest"
+                            [value]="dt.tenure_of_appointment"
+                            disabled
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label"
+                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                            >Year of Service *</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder=""
+                            aria-label="Pinterest"
+                            [value]="dt.years_of_service"
+  
+                            disabled
+                          />
+                        </div>
+                    </div>
+                    <!-- Row END -->
+                  </div>
+                </div>
+  
+                <!-- change password -->
+                <div class="col-xxl-6">
+                  <div class="bg-secondary-soft px-4 py-5 rounded">
+                    <div class="row g-3">
+                      <h4 class="my-4">Highest Degree</h4>
+  
+                      <h5>Baccalaureate</h5>
+                      <!-- Old password -->
+                      <div class="col-md-6">
+                        <label for="exampleInputPassword1" class="form-label"
+                          >Baccalaureate *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          [value]="dt.baccalaureate"
+                          disabled
+                        />
+                      </div>
+                      <!-- New password -->
+                      <div class="col-md-6">
+                        <label for="exampleInputPassword2" class="form-label"
+                          >Ba Spec *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword2"
+                          [value]="dt.ba_Spec"
+                          disabled
+                        />
+                      </div>
+                      <!-- Confirm password -->
+                      <div class="col-md-12">
+                        <label for="exampleInputPassword3" class="form-label"
+                          >School and Year Graduated</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword3"
+                          [value]="dt.school_graduated"
+                          disabled
+                        />
+                      </div>
+                      <h5>Masters</h5>
+                      <!-- Old password -->
+                      <div class="col-md-6">
+                        <label for="exampleInputPassword1" class="form-label"
+                          >Masters *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          [value]="dt.masters"
+                          disabled
+                        />
+                      </div>
+                      <!-- New password -->
+                      <div class="col-md-6">
+                        <label for="exampleInputPassword2" class="form-label"
+                          >Ma Spec *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword2"
+                          [value]="dt.ma_spec"
+                          disabled
+                        />
+                      </div>
+                      <!-- Confirm password -->
+                      <div class="col-md-12">
+                        <label for="exampleInputPassword3" class="form-label"
+                          >School and Year Graduated</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword3"
+                          [value]="dt.school_graduated_2"
+                          disabled
+                        />
+                      </div>
+                      <h5>Doctorate</h5>
+                      <!-- Old password -->
+                      <div class="col-md-6">
+                        <label for="exampleInputPassword1" class="form-label"
+                          >Doctorate *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          [value]="dt.doctorate"
+                          disabled
+                        />
+                      </div>
+                      <!-- New password -->
+                      <div class="col-md-6">
+                        <label for="exampleInputPassword2" class="form-label"
+                          >Ph. D. Spec *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword2"
+                          [value]="dt.Ph_D_Spec"
+                          disabled
+                        />
+                      </div>
+                      <!-- Confirm password -->
+                      <div class="col-md-12">
+                        <label for="exampleInputPassword3" class="form-label"
+                          >School and Year Graduated</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword3"
+                          [value]="dt.school_graduated_3"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row END -->
+              <!-- button -->
+              <div class="gap-3 d-md-flex justify-content-md-end text-center">
+                <button type="button" class="btn btn-danger btn-lg">
+                  Delete profile
+                </button>
+                <button type="button" class="btn btn-primary btn-lg">
+                  Update profile
+                </button>
+              </div>
+            </form>
+            <!-- Form END -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

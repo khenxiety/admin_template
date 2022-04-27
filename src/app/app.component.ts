@@ -19,19 +19,6 @@ export class AppComponent {
   title = 'test_project';
   constructor(private observer: BreakpointObserver) {}
 
-  ngAfterViewInit() {
-    this.observer
-      .observe(['(max-width: 1040px)'])
-      .pipe(delay(1))
-      .subscribe((res) => {
-        if (res.matches) {
-          this.SideNav.mode = 'over';
-          this.SideNav.close();
-        } else {
-          this.SideNav.mode = 'side';
-          this.SideNav.open();
-        }
-      });
-  }
+  
   
 }
