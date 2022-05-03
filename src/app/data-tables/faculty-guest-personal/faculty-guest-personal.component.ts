@@ -49,7 +49,7 @@ export class FacultyGuestPersonalComponent implements AfterViewInit {
   dataSource: MatTableDataSource<DataTable2Item>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name','age','sex','civil_status','educational_attainment','school_graduated','rank','date_of_original_Appointment','tenure_of_appointment','place_of_origin','date_of_birth'];
+  displayedColumns = ['id', 'name','age','sex','civil_status','educational_attainment','school_graduated','rank','date_of_original_Appointment','place_of_origin','date_of_birth'];
 
   data:any;
   search:any;
@@ -84,7 +84,7 @@ export class FacultyGuestPersonalComponent implements AfterViewInit {
     //   this.dataSource.paginator = this.paginator;
     //   this.table.dataSource = this.dataSource;
     // })
-    const dbinstance=collection(this.firestore,'employees');
+    const dbinstance=collection(this.firestore,'guest');
     getDocs(
       dbinstance,
     ).then((res:any)=>{
@@ -94,9 +94,9 @@ export class FacultyGuestPersonalComponent implements AfterViewInit {
       this.data=[...res.docs.map((doc:any)=>{
         return {...doc.data(),id:doc.id}
       })]
-      this.data=this.data.filter((item: { sub_type: string; })=>item.sub_type=="guest lecturer");
+      this.data=this.data.filter((item: { sub_type: string; })=>item.sub_type=="old guest lecturer");
       this.length=this.data.length;
-           this.dataSource.data = this.data as DataTable2Item[];
+           this.dataSource.data = this.data.sort((a:any, b:any) => a['name'] > b['name'] ? 1 : a['name'] === b['name'] ? 0 : -1) as DataTable2Item[];
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;
@@ -125,7 +125,7 @@ export class FacultyGuestPersonalComponent implements AfterViewInit {
       
 
        /* save to file */
-      XLSX.writeFile(wb, 'Faculty List Form B (Guest Lecturer).xlsx');
+      XLSX.writeFile(wb, 'Faculty List Form B (Guest Lecturer | All).xlsx');
       location.reload();
 			
     }

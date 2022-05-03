@@ -65,8 +65,9 @@ export class JobpersonnelTemporaryDegreeComponent implements AfterViewInit {
   displayedColumns = [
     'id',
     'name',
-    'age',
     'sex',
+    'age',
+
     'baccalaureate',
     'ba_spec',
     'school_graduated',
@@ -76,12 +77,16 @@ export class JobpersonnelTemporaryDegreeComponent implements AfterViewInit {
     'doctorate',
     'Ph_D_Spec',
     'school_graduated3',
+    'tenure_of_appointment',
+
+    
     'years_of_service',
+    
     'rank',
     'FT_or_PT',
-    'teaching_load',
     'subjects_Taught',
-    'tenure_of_appointment',
+    'teaching_load',
+
   ];
   data: any;
   search: any;
@@ -131,7 +136,7 @@ export class JobpersonnelTemporaryDegreeComponent implements AfterViewInit {
           (item: { sub_type: string }) => item.sub_type == 'casual'
         );
         this.length=this.data.length;
-        this.dataSource.data = this.data as DataTable2Item[];
+        this.dataSource.data = this.data.sort((a:any, b:any) => a['name'] > b['name'] ? 1 : a['name'] === b['name'] ? 0 : -1) as DataTable2Item[];
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;

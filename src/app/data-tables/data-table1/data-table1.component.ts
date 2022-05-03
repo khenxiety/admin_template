@@ -68,7 +68,7 @@ export class DataTable1Component implements AfterViewInit {
     'id',
     'name',
     'ft_or_tp',
-    'age',
+    
     'sex',
     'baccalaureate',
     'ba_spec',
@@ -78,8 +78,11 @@ export class DataTable1Component implements AfterViewInit {
     'Ph_D_Spec',
     'professional_licensure_earned',
     'tenure_of_appointment',
-    'subjects_Taught',
     'rank',
+    'teaching_load',
+
+
+    'subjects_Taught',
     'annual_salary',
     'actions',
   ];
@@ -117,6 +120,8 @@ export class DataTable1Component implements AfterViewInit {
   department_filter: any;
 
   length: any;
+
+  faculty_sorted:any;
 
   constructor(
     private http: HttpClient,
@@ -164,7 +169,12 @@ export class DataTable1Component implements AfterViewInit {
           (item: { sub_type: string }) => item.sub_type == 'permanent'
         );
         this.length = this.faculty.length;
-        this.dataSource.data = this.faculty as DataTable1Item[];
+
+        this.faculty_sorted=this.faculty.sort((a:any, b:any) => a['name'] > b['name'] ? 1 : a['name'] === b['name'] ? 0 : -1);
+
+
+
+        this.dataSource.data = this.faculty_sorted as DataTable1Item[];
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;
@@ -288,6 +298,7 @@ export class DataTable1Component implements AfterViewInit {
       .afterClosed()
       .subscribe((res) => {
         this.ngAfterViewInit();
+        location.reload()
       });
   }
 

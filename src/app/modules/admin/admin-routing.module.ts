@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ViewGuestLecturerComponent } from 'src/app/pages/view-guest-lecturer/view-guest-lecturer.component';
 import { AccountsComponent } from 'src/app/pages/accounts/accounts.component';
 import { AddFacultyComponent } from 'src/app/pages/add-faculty/add-faculty.component';
 import { AdminDashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
       },{
         path:'faculty/profile/:id',
         component:AddFacultyComponent
+      },
+      {
+        path:'guest-lecturer/profile/:id',
+        component:ViewGuestLecturerComponent
       },
       {
         path: 'job-personnel-list/all-info',

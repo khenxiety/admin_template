@@ -23,12 +23,12 @@ export class AddEmployeeComponent implements OnInit {
   ft_or_tp: any;
   age: any;
   sex: any;
-  baccalaureate: any;
-  ba_spec: any;
-  masters: any;
-  ma_spec: any;
-  doctorate: any;
-  Ph_D_Spec: any;
+  baccalaureate: any='';
+  ba_spec: any='';
+  masters: any='';
+  ma_spec: any='';
+  doctorate: any='';
+  Ph_D_Spec: any='';
   professional_licensure_earned: any;
   tenure_of_appointment: any;
   rank: any;
@@ -94,13 +94,13 @@ export class AddEmployeeComponent implements OnInit {
       place_of_origin: this.place_of_origin,
       date_of_birth:  this.date_of_birth,
       date_of_original_Appointment: this.date_of_original_Appointment,
-      school_graduated: this.school_graduated+` (${this.year1})`,
-      school_graduated_2: this.school_graduated2+` (${this.year2})`,
-      school_graduated_3: this.school_graduated3+` (${this.year3})`,
+      school_graduated: this.school_graduated,
+      school_graduated_2: this.school_graduated2,
+      school_graduated_3: this.school_graduated3,
 
       educational_attainment:this.educational_attainment,
       civil_status: this.civil_status,
-      years_of_service: this.year_of_service,
+      years_of_service: this.tenure_of_appointment,
       type: this.type,
       department: this.department,
       sub_type: this.sub_type,
@@ -157,5 +157,14 @@ export class AddEmployeeComponent implements OnInit {
     // } catch (error) {
       
     // }
+  }
+  noteOpen(){
+    console.log('test')
+    const note =document.getElementById('note')!;
+    note.classList.toggle('open')
+  }
+  noteClose(){
+    const note =document.getElementById('note')!;
+    note.classList.toggle('open')
   }
 }

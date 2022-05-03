@@ -15,6 +15,7 @@ export class AdminDashboardComponent implements OnInit {
 
   facultyTotal:any;
   jobPersonnelTotal:any;
+  guest:any;
 
   constructor(private http :HttpClient, private firestore:Firestore) { }
 
@@ -58,6 +59,8 @@ export class AdminDashboardComponent implements OnInit {
     })
     this.getJobpersonnels()
 
+
+    this.getGuests()
     
 
 
@@ -85,6 +88,28 @@ export class AdminDashboardComponent implements OnInit {
       console.log(err.message)
     })
     
+  }
+
+
+  getGuests(){
+    const dbinstance=collection(this.firestore,'guest');
+    getDocs(
+      dbinstance,
+    ).then((res:any)=>{
+   
+      this.guest=[...res.docs.map((doc:any)=>{
+        return {...doc.data(),id:doc.id}
+      })]
+
+
+
+      
+        this.facultyTotal=this.facultyTotal+this.guest.length;
+    }).catch((err:any)=>{
+      console.log(err.message)
+    })
+    
+
   }
 
   getTotal(){

@@ -104,9 +104,46 @@
 
         </div>
         <div class="tab-pane fade show p-3" id="nav-add" role="tabpanel" aria-labelledby="nav-add">
+          <div class="mat-shadow mat-card" >
+            <div class="header">
+                <h4>Manage Profile</h4>
+            </div>
+
+            <form action="">
 
 
-            hehe
+
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email"  [(ngModel)]="new_email" aria-describedby="helpId" placeholder="Enter Email" >
+                </div>
+
+                
+
+                <div class="form-group">
+                    <label for="">New Password</label>
+                    <input type="password"  name="password" [(ngModel)]="new_password" aria-describedby="helpId" placeholder="Enter Password">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Confirm Password</label>
+                    <input type="password" name="password_confirmation" [(ngModel)]="c_new_password" aria-describedby="helpId" placeholder="Enter Confirm Password">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" mat-raised-button class="mat-button btn-primary" (click)="addAccount()">Update</button>
+                </div>
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
 
 
         </div>

@@ -51,7 +51,7 @@
     
 
     <ng-container matColumnDef="ft_or_tp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ft or Pt</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Time(FT) or Part Time(PT)</th>
       <td mat-cell *matCellDef="let row">{{row.FT_or_PT}}</td>
     </ng-container>
 
@@ -101,6 +101,10 @@
     <ng-container matColumnDef="rank">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank</th>
       <td mat-cell *matCellDef="let row">{{row.rank}}</td>
+    </ng-container>
+    <ng-container matColumnDef="teaching_load">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Teaching Load</th>
+      <td mat-cell *matCellDef="let row">{{row.teaching_load}}</td>
     </ng-container>
     <ng-container matColumnDef="subjects_Taught">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Subjects Taught</th>

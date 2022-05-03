@@ -27,7 +27,7 @@
                 <div class="col-xxl-8 mb-5 mb-xxl-0">
                   <div class="bg-secondary-soft px-4 py-5 rounded">
                     <div class="row g-3">
-                      <h4 class="mb-4 mt-0">Personal Information</h4>
+                      <h4 class="mb-4 mt-0">Demographic Profile</h4>
                       <!-- First Name -->
                       <div class="col-md-6">
                         <label class="form-label">Full Name *</label>
@@ -109,34 +109,67 @@
                     <!-- Row END -->
                   </div>
                 </div>
-                <!-- Upload profile -->
               </div>
               <!-- Row END -->
   
-              <!-- Social media detail -->
+           
               <div class="row mb-5 gx-5">
                 <div class="col-xxl-6 mb-5 mb-xxl-0">
                   <div class="bg-secondary-soft px-4 py-5 rounded">
                     <div class="row g-3">
-                      <h4 class="mb-4 mt-0">Employee detail</h4>
-                      <!-- Facebook -->
-                      <div class="col-md-12">
+                      <h4 class="mb-4 mt-0">Teaching Profile</h4>
+  
+              
+  
+                   
+                      
+                      <div class="col-md-6">
                         <label class="form-label"
-                          ><i class="fab fa-fw fa-facebook me-2 text-facebook"></i
-                          >Educational Attainment *</label
+                          ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                          >Department *</label
                         >
                         <input
                           type="text"
                           class="form-control"
                           placeholder=""
-                          aria-label="Facebook"
-                          [value]="dt.educational_attainment"
+                          aria-label="Pinterest"
+                          [value]="dt.department"
                           disabled
                         />
                       </div>
-                      <!-- Twitter -->
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                          >Full Time(FT) or Part Time(PT) *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Pinterest"
+                          [value]="dt.FT_or_PT"
+                          disabled
+                        />
+                      </div>
+                   
   
-                      <!-- Linkedin -->
+                   
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i
+                            class="fas fa-fw fa-basketball-ball text-dribbble me-2"
+                          ></i
+                          >Academic Rank *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Dribble"
+                          [value]="dt.rank"
+                          disabled
+                        />
+                      </div>
                       <div class="col-md-6">
                         <label class="form-label"
                           ><i
@@ -153,7 +186,37 @@
                           disabled
                         />
                       </div>
-                      <!-- Instragram -->
+                      
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                          >Tenure of Appointment *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Pinterest"
+                          [value]="dt.tenure_of_appointment"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          ><i class="fab fa-fw fa-pinterest text-pinterest"></i
+                          >Year of Service *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                          aria-label="Pinterest"
+                          [value]="dt.years_of_service"
+  
+                          disabled
+                        />
+                      </div>
+  
                       <div class="col-md-6">
                         <label class="form-label"
                           ><i
@@ -170,38 +233,7 @@
                           disabled
                         />
                       </div>
-                      <!-- Dribble -->
-                      <div class="col-md-6">
-                        <label class="form-label"
-                          ><i
-                            class="fas fa-fw fa-basketball-ball text-dribbble me-2"
-                          ></i
-                          >Rank *</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder=""
-                          aria-label="Dribble"
-                          [value]="dt.rank"
-                          disabled
-                        />
-                      </div>
-                      <!-- Pinterest -->
-                      <div class="col-md-6">
-                        <label class="form-label"
-                          ><i class="fab fa-fw fa-pinterest text-pinterest"></i
-                          >FT or PT *</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder=""
-                          aria-label="Pinterest"
-                          [value]="dt.FT_or_PT"
-                          disabled
-                        />
-                      </div>
+  
                       <div class="col-md-6">
                           <label class="form-label"
                             ><i
@@ -219,38 +251,26 @@
                           />
                         </div>
                         <!-- Pinterest -->
-                        <div class="col-md-6">
-                          <label class="form-label"
-                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
-                            >Department *</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder=""
-                            aria-label="Pinterest"
-                            [value]="dt.department"
-                            disabled
-                          />
-                        </div>
+  
                         <div class="col-md-6">
                           <label class="form-label"
                             ><i
                               class="fas fa-fw fa-basketball-ball text-dribbble me-2"
                             ></i
-                            >Employee Type *</label
+                            >Status of Appointment *</label
                           >
                           <input
                             type="text"
                             class="form-control"
                             placeholder=""
                             aria-label="Dribble"
-                            [value]="dt.type"
+                            [value]="dt.type+' '+'('+(dt.sub_type)+')'"
                             disabled
+                            style="text-transform: capitalize;"
                           />
                         </div>
                         <!-- Pinterest -->
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                           <label class="form-label"
                             ><i class="fab fa-fw fa-pinterest text-pinterest"></i
                             >Category *</label
@@ -263,7 +283,7 @@
                             [value]="dt.sub_type"
                             disabled
                           />
-                        </div>
+                        </div> -->
                         <div class="col-md-6">
                           <label class="form-label"
                             ><i class="fab fa-fw fa-pinterest text-pinterest"></i
@@ -278,35 +298,8 @@
                             disabled
                           />
                         </div>
-                        <div class="col-md-6">
-                          <label class="form-label"
-                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
-                            >Tenure of Appointment *</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder=""
-                            aria-label="Pinterest"
-                            [value]="dt.tenure_of_appointment"
-                            disabled
-                          />
-                        </div>
-                        <div class="col-md-6">
-                          <label class="form-label"
-                            ><i class="fab fa-fw fa-pinterest text-pinterest"></i
-                            >Year of Service *</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder=""
-                            aria-label="Pinterest"
-                            [value]="dt.years_of_service"
   
-                            disabled
-                          />
-                        </div>
+  
                     </div>
                     <!-- Row END -->
                   </div>
@@ -316,7 +309,7 @@
                 <div class="col-xxl-6">
                   <div class="bg-secondary-soft px-4 py-5 rounded">
                     <div class="row g-3">
-                      <h4 class="my-4">Highest Degree</h4>
+                      <h4 class="my-4">Educational Attainment</h4>
   
                       <h5>Baccalaureate</h5>
                       <!-- Old password -->

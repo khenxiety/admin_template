@@ -8,18 +8,20 @@
     <br>
     <div class="title">
         
-        <h2 style="margin: 0;">Faculty List (Guest Lecturer)</h2>
-      </div>
+        <h2 style="margin: 0;">Teaching Personnel (Guest Lecturer)</h2>
+    </div>
 
     
       <div class="container-fluid px-0 mt-3">
+
+        <h4 class="my-5 text-muted"> Guest Lecturers</h4>
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button
               class="nav-link active"
               id="nav-home-tab"
               data-bs-toggle="tab"
-              data-bs-target="#form-a"
+              data-bs-target="#form-a-all"
               type="button"
               role="tab"
               aria-controls="form-a"
@@ -31,7 +33,7 @@
               class="nav-link"
               id="nav-add-tab"
               data-bs-toggle="tab"
-              data-bs-target="#form-b"
+              data-bs-target="#form-b-all"
               type="button"
               role="tab"
               aria-controls="form-b"
@@ -43,7 +45,7 @@
               class="nav-link"
               id="nav-add-tab"
               data-bs-toggle="tab"
-              data-bs-target="#form-c"
+              data-bs-target="#form-c-all"
               type="button"
               role="tab"
               aria-controls="form-c"
@@ -54,7 +56,7 @@
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active  bg-white py-2 " id="form-a" role="tabpanel" aria-labelledby="form-a">
+            <div class="tab-pane fade show active  bg-white py-2 " id="form-a-all" role="tabpanel" aria-labelledby="form-a-all">
     
     
               <app-faculty-guest-alldata></app-faculty-guest-alldata>
@@ -62,17 +64,157 @@
     
     
             </div>
-            <div class="tab-pane fade show bg-white py-2" id="form-b" role="tabpanel" aria-labelledby="form-b">
+            <div class="tab-pane fade show bg-white py-2" id="form-b-all" role="tabpanel" aria-labelledby="form-b-all">
     
     
                <app-faculty-guest-personal></app-faculty-guest-personal>
     
     
             </div>
-            <div class="tab-pane fade show bg-white py-2" id="form-c" role="tabpanel" aria-labelledby="form-c">
+            <div class="tab-pane fade show bg-white py-2" id="form-c-all" role="tabpanel" aria-labelledby="form-c-all">
     
     
                 <app-faculty-guest-degree></app-faculty-guest-degree>
+     
+     
+             </div>
+    
+        </div>
+      </div>
+
+
+      <div class="container-fluid px-0 mt-3">
+
+        <h4 class="my-5 text-muted">Newly hired Guest Lecturers</h4>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="nav-home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-a-newly"
+              type="button"
+              role="tab"
+              aria-controls="form-a"
+              aria-selected="false"
+            >
+            Form A
+            </button>
+            <button
+              class="nav-link"
+              id="nav-add-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-b-newly"
+              type="button"
+              role="tab"
+              aria-controls="form-b"
+              aria-selected="false"
+            >
+              Form B
+            </button>
+            <button
+              class="nav-link"
+              id="nav-add-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-c-newly"
+              type="button"
+              role="tab"
+              aria-controls="form-c"
+              aria-selected="false"
+            >
+              Form C
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active  bg-white py-2 " id="form-a-newly" role="tabpanel" aria-labelledby="form-a">
+    
+    
+              <app-faculty-guest-newly-alldata></app-faculty-guest-newly-alldata>
+
+    
+    
+            </div>
+            <div class="tab-pane fade show bg-white py-2" id="form-b-newly" role="tabpanel" aria-labelledby="form-b">
+    
+    
+               <app-faculty-guest-newly-personal></app-faculty-guest-newly-personal>
+    
+    
+            </div>
+            <div class="tab-pane fade show bg-white py-2" id="form-c-newly" role="tabpanel" aria-labelledby="form-c">
+    
+    
+                <app-faculty-guest-newly-degree></app-faculty-guest-newly-degree>
+     
+     
+             </div>
+    
+        </div>
+      </div>
+      <div class="container-fluid px-0 mt-3">
+
+        <h4 class="my-5 text-muted">Foreign to Invited Foreign Lecturers</h4>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="nav-home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-a-foreign"
+              type="button"
+              role="tab"
+              aria-controls="form-a"
+              aria-selected="false"
+            >
+            Form A
+            </button>
+            <button
+              class="nav-link"
+              id="nav-add-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-b-foreign"
+              type="button"
+              role="tab"
+              aria-controls="form-b"
+              aria-selected="false"
+            >
+              Form B
+            </button>
+            <button
+              class="nav-link"
+              id="nav-add-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#form-c-foreign"
+              type="button"
+              role="tab"
+              aria-controls="form-c"
+              aria-selected="false"
+            >
+              Form C
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active  bg-white py-2 " id="form-a-foreign" role="tabpanel" aria-labelledby="form-a">
+    
+    
+              <app-faculty-guest-invited-alldata></app-faculty-guest-invited-alldata>
+
+    
+    
+            </div>
+            <div class="tab-pane fade show bg-white py-2" id="form-b-foreign" role="tabpanel" aria-labelledby="form-b">
+    
+    
+               <app-faculty-guest-invited-personal></app-faculty-guest-invited-personal>
+    
+    
+            </div>
+            <div class="tab-pane fade show bg-white py-2" id="form-c-foreign" role="tabpanel" aria-labelledby="form-c">
+    
+    
+                <app-faculty-guest-invited-degree></app-faculty-guest-invited-degree>
      
      
              </div>

@@ -1,0 +1,149 @@
+<div class="mat-elevation-z2 tables">
+
+  <div class="search">
+    <div class="left d-flex align-items-center gap-3">
+      <button mat-icon-button (click)="openFilterModal()">
+        <mat-icon class="mat-icon">filter_list</mat-icon>
+
+      </button>
+
+      <div class="input-icon d-flex align-items-center">
+        <mat-icon class="mat-icon">search</mat-icon>
+
+
+        <input type="text" placeholder="Search" [(ngModel)]="search" (keyup)="searchFilter($event)" name="search"  #input>
+
+
+      </div>
+
+     
+
+    </div>
+    <div class="right" >
+      <div class="buttons d-flex align-items-center gap-4">
+        <button mat-raised-button style="background-color: #FF3E3E; color: white;" (click)="openModal()">
+          <mat-icon class="mat-icon text-white">add</mat-icon>
+          Add Employee
+        </button>
+        <button mat-raised-button class="btn-success" (click)="exportexcel()">
+          <mat-icon class="mat-icon text-white"> import_export</mat-icon>
+          Export to Excel
+
+        </button>
+      </div>
+    </div>
+    
+   
+  </div>
+  <table mat-table class="full-width-table" matSort aria-label="Elements" id="table-newly-alldata">
+   
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let i=index">{{i+1}}</td>
+    </ng-container>
+
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row" > <span class="table-name">{{row.name}}</span> </td>
+    </ng-container>
+
+    
+
+    <ng-container matColumnDef="ft_or_tp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Time(FT) or Part Time(PT)</th>
+      <td mat-cell *matCellDef="let row">{{row.FT_or_PT}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
+      <td mat-cell *matCellDef="let row">{{row.age}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="sex">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Sex</th>
+      <td mat-cell *matCellDef="let row">{{row.sex}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="baccalaureate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Baccalaureate</th>
+      <td mat-cell *matCellDef="let row">{{row.baccalaureate}}</td>
+    </ng-container>
+    <ng-container matColumnDef="ba_spec">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ba Spec</th>
+      <td mat-cell *matCellDef="let row">{{row.ba_Spec}}</td>
+    </ng-container>
+    <ng-container matColumnDef="masters">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Masters</th>
+      <td mat-cell *matCellDef="let row">{{row.masters}}</td>
+    </ng-container>
+    <ng-container matColumnDef="ma_spec">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ma Spec</th>
+      <td mat-cell *matCellDef="let row">{{row.ma_spec}}</td>
+    </ng-container>
+    <ng-container matColumnDef="doctorate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Doctorate</th>
+      <td mat-cell *matCellDef="let row">{{row.doctorate}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Ph_D_Spec">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ph D Spec</th>
+      <td mat-cell *matCellDef="let row">{{row.Ph_D_Spec}}</td>
+    </ng-container>
+    <ng-container matColumnDef="professional_licensure_earned">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Professional <br> Licensure Earned</th>
+      <td mat-cell *matCellDef="let row">{{row.professional_licensure_earned}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tenure_of_appointment">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tenure of <br> Appointment</th>
+      <td mat-cell *matCellDef="let row">{{row.tenure_of_appointment}}</td>
+    </ng-container>
+    <ng-container matColumnDef="rank">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank</th>
+      <td mat-cell *matCellDef="let row">{{row.rank}}</td>
+    </ng-container>
+    <ng-container matColumnDef="teaching_load">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Teaching Load</th>
+      <td mat-cell *matCellDef="let row">{{row.teaching_load}}</td>
+    </ng-container>
+    <ng-container matColumnDef="subjects_Taught">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Subjects Taught</th>
+      <td mat-cell *matCellDef="let row">{{row.subjects_Taught}}</td>
+    </ng-container>
+    <ng-container matColumnDef="annual_salary">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Annual salary</th>
+      <td mat-cell *matCellDef="let row">{{row.annual_Salary}}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+      <td mat-cell *matCellDef="let row" class="d-flex">
+        <button mat-icon-button (click)="openModalUpdate(row)">
+          <mat-icon class="mat-icon action-icons" >edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="openDeleteModal(row)">
+          <mat-icon class="mat-icon action-icons">delete</mat-icon>
+        </button>
+        <button mat-icon-button (click)="viewProfile(row.id)">
+          <mat-icon class="mat-icon action-icons">more_horiz</mat-icon>
+        </button>
+        
+       
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10,length]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>
+
+
+
+

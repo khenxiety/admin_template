@@ -15,6 +15,9 @@ import {collection,addDoc,Firestore, getDocs, deleteDoc, doc, updateDoc} from '@
 import * as XLSX from 'xlsx';
 import { DeleteFacultyComponent } from 'src/app/modals/delete-faculty/delete-faculty.component';
 import { Router } from '@angular/router';
+import { ViewFacultyComponent } from 'src/app/modals/view-faculty/view-faculty.component';
+import { DeleteGuestsComponent } from 'src/app/modals/delete-guests/delete-guests.component';
+import { UpdateGuestComponent } from 'src/app/modals/update-guest/update-guest.component';
 
 export interface DataTable1Item {
   name: string;
@@ -59,7 +62,7 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
     'id',
     'name',
     'ft_or_tp',
-    'age',
+    
     'sex',
     'baccalaureate',
     'ba_spec',
@@ -69,8 +72,11 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
     'Ph_D_Spec',
     'professional_licensure_earned',
     'tenure_of_appointment',
-    'subjects_Taught',
     'rank',
+    'teaching_load',
+
+
+    'subjects_Taught',
     'annual_salary',
     'actions',
   ];
@@ -136,7 +142,7 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
     //     this.dataSource.paginator = this.paginator;
     //     this.table.dataSource = this.dataSource;
     //   });
-    const dbinstance=collection(this.firestore,'employees');
+    const dbinstance=collection(this.firestore,'guest');
     getDocs(
       dbinstance,
     ).then((res:any)=>{
@@ -147,10 +153,10 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
         return {...doc.data(),id:doc.id}
       })]
           this.faculty = this.faculty.filter(
-          (item: { sub_type: string }) => item.sub_type == 'guest lecturer'
+          (item: { sub_type: string }) => item.sub_type == 'old guest lecturer'
         );
         this.length=this.faculty.length;
-           this.dataSource.data = this.faculty as DataTable1Item[];
+        this.dataSource.data = this.faculty.sort((a:any, b:any) => a['name'] > b['name'] ? 1 : a['name'] === b['name'] ? 0 : -1) as DataTable1Item[];
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;
@@ -203,11 +209,11 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
   }
 
   openModal(){
-    let modal = this.modal.open(AddEmployeeComponent,{
+    let modal = this.modal.open(ViewFacultyComponent,{
       width:'90vw',
       data:{
         type:'teaching-staff',
-        sub_type:'guest lecturer'
+        sub_type:'old guest lecturer'
       }
       
     }).afterClosed().subscribe(res=>{
@@ -278,7 +284,7 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
 
 
   openModalUpdate(data:any){
-    const dialogRef = this.modal.open(UpdateEmployeeComponent, {
+    const dialogRef = this.modal.open(UpdateGuestComponent, {
       width:'90vw',
       hasBackdrop: true,
       data:{
@@ -295,7 +301,7 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
 
     openDeleteModal(data: any) {
       const dialogRef = this.modal
-        .open(DeleteFacultyComponent, {
+        .open(DeleteGuestsComponent, {
           
           hasBackdrop: true,
           data: {
@@ -310,7 +316,7 @@ export class FacultyGuestAlldataComponent implements AfterViewInit {
     }
     viewProfile(id:any){
 
-      this.router.navigate(['/admin/faculty/profile/'+id]);
+      this.router.navigate(['/admin/guest-lecturer/profile/'+id]);
   
   
     }

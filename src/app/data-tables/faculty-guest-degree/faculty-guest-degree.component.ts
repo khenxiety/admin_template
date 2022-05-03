@@ -58,7 +58,27 @@ export class FacultyGuestDegreeComponent implements AfterViewInit {
   dataSource: MatTableDataSource<DataTable2Item>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name','age','sex', 'baccalaureate','ba_spec','school_graduated','masters','ma_spec','school_graduated2','doctorate','Ph_D_Spec','school_graduated3','years_of_service','rank','FT_or_PT','teaching_load','subjects_Taught'];
+  displayedColumns = [
+    'id',
+    'name',
+    'sex',
+    'age',
+    
+    'baccalaureate',
+    'ba_spec',
+    'school_graduated',
+    'masters',
+    'ma_spec',
+    'school_graduated2',
+    'doctorate',
+    'Ph_D_Spec',
+    'school_graduated3',
+    'years_of_service',
+    'rank',
+    'FT_or_PT',
+    'teaching_load',
+    'subjects_Taught',
+  ];
   data:any;
   search:any;
   length:any;
@@ -90,7 +110,7 @@ export class FacultyGuestDegreeComponent implements AfterViewInit {
     //   this.dataSource.paginator = this.paginator;
     //   this.table.dataSource = this.dataSource;
     // })
-    const dbinstance=collection(this.firestore,'employees');
+    const dbinstance=collection(this.firestore,'guest');
     getDocs(
       dbinstance,
     ).then((res:any)=>{
@@ -100,9 +120,9 @@ export class FacultyGuestDegreeComponent implements AfterViewInit {
       this.data=[...res.docs.map((doc:any)=>{
         return {...doc.data(),id:doc.id}
       })]
-      this.data=this.data.filter((item: { sub_type: string; })=>item.sub_type=="guest lecturer");
+      this.data=this.data.filter((item: { sub_type: string; })=>item.sub_type=="old guest lecturer");
       this.length=this.data.length;
-           this.dataSource.data = this.data as DataTable2Item[];
+           this.dataSource.data = this.data.sort((a:any, b:any) => a['name'] > b['name'] ? 1 : a['name'] === b['name'] ? 0 : -1) as DataTable2Item[];
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;

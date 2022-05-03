@@ -42,15 +42,15 @@ export class UpdateEmployeeComponent implements OnInit {
   department:any
   type:any
   year_of_service:any;
-  year1:any
-  year2:any
-  year3:any
+  year1:any=''
+  year2:any=''
+  year3:any=''
   sub_type:any
   constructor(private http: HttpClient,private firestore:Firestore, private toast: ToastrService,private mat:MatDialog,public dialogRef: MatDialogRef<UpdateEmployeeComponent>,@Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
 
-    console.log(this.data.data)
+    // console.log(this.data.data)
     this.id=this.data.data.id
     this.name=this.data.data.name
     this.email=this.data.data.email
@@ -81,10 +81,11 @@ export class UpdateEmployeeComponent implements OnInit {
     this.department=this.data.data.department
     this.type=this.data.data.type
     this.year_of_service=this.data.data.years_of_service
+    this.sub_type=this.data.data.sub_type
 
 
 
-    console.clear()
+    // console.clear()
 
 
    
@@ -118,10 +119,11 @@ export class UpdateEmployeeComponent implements OnInit {
       place_of_origin: this.place_of_origin,
       date_of_birth:  this.date_of_birth,
       date_of_original_Appointment: this.date_of_original_Appointment,
-      school_graduated: this.school_graduated,
-      school_graduated_2: this.school_graduated2,
-      school_graduated_3: this.school_graduated3,
+      school_graduated: this.school_graduated+`(${this.year1})`,
+      school_graduated_2: this.school_graduated2+`(${this.year2})`,
+      school_graduated_3: this.school_graduated3+`(${this.year3})`,
 
+      sub_type:this.sub_type,
       educational_attainment:this.educational_attainment,
       civil_status: this.civil_status,
       years_of_service: this.year_of_service,
@@ -135,6 +137,7 @@ export class UpdateEmployeeComponent implements OnInit {
       this.toast.success('Post Updated')
      
       this.mat.closeAll();
+      
 
     }).catch((err:any)=>{
       console.log(err.message)
@@ -165,6 +168,15 @@ export class UpdateEmployeeComponent implements OnInit {
     // }
 
    
+  }
+  noteOpen(){
+    console.log('test')
+    const note =document.getElementById('note')!;
+    note.classList.toggle('open')
+  }
+  noteClose(){
+    const note =document.getElementById('note')!;
+    note.classList.toggle('open')
   }
 
   

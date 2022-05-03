@@ -53,7 +53,8 @@ export class FacultyPersonalInfoComponent implements AfterViewInit {
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   
-  displayedColumns = ['id', 'name','age','sex','civil_status','educational_attainment','school_graduated','rank','date_of_original_Appointment','tenure_of_appointment','place_of_origin','date_of_birth'];
+  displayedColumns = ['id', 'name','age','sex','civil_status','educational_attainment','school_graduated','rank','date_of_original_Appointment','place_of_origin','date_of_birth'];
+  
 
   data:any;
   search:any;
@@ -100,7 +101,7 @@ export class FacultyPersonalInfoComponent implements AfterViewInit {
       })]
       this.data=this.data.filter((item: { sub_type: string; })=>item.sub_type=="permanent");
       this.length=this.data.length;
-           this.dataSource.data = this.data as DataTable2Item[];
+           this.dataSource.data = this.data.sort((a:any, b:any) => a['name'] > b['name'] ? 1 : a['name'] === b['name'] ? 0 : -1) as DataTable2Item[];
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;

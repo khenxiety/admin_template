@@ -67,6 +67,17 @@ import { JobpersonnelOrdersDegreeComponent } from './data-tables/jobpersonnel-or
 import { ViewFacultyComponent } from './modals/view-faculty/view-faculty.component';
 import { AddFacultyComponent } from './pages/add-faculty/add-faculty.component';
 import { ViewJobpersonnelComponent } from './pages/view-jobpersonnel/view-jobpersonnel.component';
+import { ViewGuestLecturerComponent } from './pages/view-guest-lecturer/view-guest-lecturer.component';
+import { FacultyGuestNewlyAlldataComponent } from './data-tables/faculty-guest-newly-alldata/faculty-guest-newly-alldata.component';
+import { FacultyGuestNewlyPersonalComponent } from './data-tables/faculty-guest-newly-personal/faculty-guest-newly-personal.component';
+import { FacultyGuestNewlyDegreeComponent } from './data-tables/faculty-guest-newly-degree/faculty-guest-newly-degree.component';
+import { FacultyGuestInvitedAlldataComponent } from './data-tables/faculty-guest-invited-alldata/faculty-guest-invited-alldata.component';
+import { FacultyGuestInvitedDegreeComponent } from './data-tables/faculty-guest-invited-degree/faculty-guest-invited-degree.component';
+import { FacultyGuestInvitedPersonalComponent } from './data-tables/faculty-guest-invited-personal/faculty-guest-invited-personal.component';
+import { DeleteGuestsComponent } from './modals/delete-guests/delete-guests.component';
+import { UpdateJobpersonnelComponent } from './modals/update-jobpersonnel/update-jobpersonnel.component';
+
+import { UpdateGuestComponent } from './modals/update-guest/update-guest.component';
 
 
 
@@ -116,6 +127,17 @@ export function tokenGetter() {
     ViewFacultyComponent,
     AddFacultyComponent,
     ViewJobpersonnelComponent,
+    ViewGuestLecturerComponent,
+    FacultyGuestNewlyAlldataComponent,
+    FacultyGuestNewlyPersonalComponent,
+    FacultyGuestNewlyDegreeComponent,
+    FacultyGuestInvitedAlldataComponent,
+    FacultyGuestInvitedDegreeComponent,
+    FacultyGuestInvitedPersonalComponent,
+    DeleteGuestsComponent,
+    UpdateJobpersonnelComponent,
+   
+    UpdateGuestComponent,
    
    
   ],

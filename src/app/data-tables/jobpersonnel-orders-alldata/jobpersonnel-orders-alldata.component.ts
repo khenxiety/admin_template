@@ -23,6 +23,7 @@ import {
 import { AddPersonnelComponent } from 'src/app/modals/add-personnel/add-personnel.component';
 import { DeleteJobpersonnelComponent } from 'src/app/modals/delete-jobpersonnel/delete-jobpersonnel.component';
 import { Router } from '@angular/router';
+import { UpdateJobpersonnelComponent } from 'src/app/modals/update-jobpersonnel/update-jobpersonnel.component';
 
 export interface DataTable2Item {
   name: string;
@@ -67,7 +68,7 @@ export class JobpersonnelOrdersAlldataComponent implements AfterViewInit {
     'id',
     'name',
     'ft_or_tp',
-    'age',
+    
     'sex',
     'baccalaureate',
     'ba_spec',
@@ -79,6 +80,8 @@ export class JobpersonnelOrdersAlldataComponent implements AfterViewInit {
     'tenure_of_appointment',
     
     'rank',
+    'teaching_load',
+    'subjects_Taught',
     'annual_salary',
     'actions',
   ];
@@ -142,7 +145,7 @@ export class JobpersonnelOrdersAlldataComponent implements AfterViewInit {
           (item: { sub_type: string }) => item.sub_type == 'job orders'
         );
         this.length = this.non_teaching.length;
-        this.dataSource.data = this.non_teaching as DataTable2Item[];
+        this.dataSource.data = this.non_teaching.sort((a:any, b:any) => a['name'] > b['name'] ? 1 : a['name'] === b['name'] ? 0 : -1) as DataTable2Item[];
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;
@@ -230,7 +233,7 @@ export class JobpersonnelOrdersAlldataComponent implements AfterViewInit {
 
   openModalUpdate(data: any) {
     const dialogRef = this.modal
-      .open(UpdateEmployeeComponent, {
+      .open(UpdateJobpersonnelComponent, {
         width: '90vw',
         hasBackdrop: true,
         data: {

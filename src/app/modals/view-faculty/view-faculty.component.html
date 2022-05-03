@@ -1,1 +1,535 @@
-<p>view-faculty works!</p>
+<h1 mat-dialog-title>Add Employee</h1>
+
+<mat-dialog-content>
+
+  <div class="container-fluid px-0 mt-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <!-- Page title -->
+
+          <!-- Form START -->
+          <form class="file-upload">
+            <div class="row mb-5 gx-5">
+              <!-- Contact detail -->
+              <div class="col-xxl-8 mb-5 mb-xxl-0">
+                <div class="bg-secondary-soft px-4 py-5 rounded">
+                  <div class="row g-3">
+                    <h4 class="mb-4 mt-0">Demographic Profile</h4>
+                    <!-- First Name -->
+                    <div class="col-md-6">
+                      <label for=""
+                        >FullName
+                        <span class="text-muted">(Uppercase)</span>:</label
+                      >
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        [(ngModel)]="name"
+                        class="form-control"
+                        placeholder="LASTNAME, FIRSTNAME MIDDLENAME"
+                      />
+                    </div>
+                    <!-- Last name -->
+                    <div class="col-md-6">
+                      <label for="">Civil Status:</label>
+
+                      <select
+                        name="civilStatus"
+                        id="civilStatus"
+                        placeholder="Civil Status"
+                        [(ngModel)]="civil_status"
+                        class="form-select"
+                      >
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widowed">Widowed</option>
+                        <option value="Widowed">Separated</option>
+                      </select>
+                    </div>
+                    <!-- Phone number -->
+                    <div class="col-md-6">
+                      <label for="">Age:</label>
+                      <input
+                        type="text"
+                        name="age"
+                        id="age"
+                        class="form-control"
+                        placeholder="Age"
+                        [(ngModel)]="age"
+                        class="form-control w-25"
+                        placeholder="Age"
+                      />
+                    </div>
+                    <!-- Mobile number -->
+                    <div class="col-md-6">
+                      <label for="">Sex:</label>
+                      <select
+                        name="sex"
+                        id="sex"
+                        [(ngModel)]="sex"
+                        class="form-select w-25"
+                      >
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                      </select>
+                    </div>
+                    <!-- Email -->
+                    <div class="col-md-6">
+                      <label for="">Email:</label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="Email"
+                        [(ngModel)]="email"
+                      />
+                    </div>
+                    <!-- Skype -->
+                    <div class="col-md-6">
+                      <label for="">Date of Birth: </label>
+                      <input
+                        type="text"
+                        name="dateOfBirth"
+                        id="dateOfBirth"
+                        class="form-control"
+                        placeholder="mm/dd/yy"
+                        [(ngModel)]="date_of_birth"
+                        class="form-control"
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="">Place of Origin:</label>
+                      <input
+                        type="text"
+                        name="placeOfOrigin"
+                        id="placeOfOrigin"
+                        class="form-control"
+                        placeholder="Place of Origin"
+                        [(ngModel)]="place_of_origin"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <!-- Row END -->
+                </div>
+              </div>
+            </div>
+            <!-- Row END -->
+
+            <div class="row mb-5 gx-5">
+              <div class="col-xxl-6 mb-5 mb-xxl-0">
+                <div class="bg-secondary-soft px-4 py-5 rounded">
+                  <div class="row g-3">
+                    <h4 class="mb-4 mt-0">Teaching Profile</h4>
+
+                    <div class="col-md-6">
+                      <label for="">Department/College: </label>
+
+                      <select
+                        name="department"
+                        id="department"
+                        class="form-control"
+                        placeholder="Department"
+                        [(ngModel)]="department"
+                        class="form-select"
+                      >
+                        <option value="CIT">CIT</option>
+                        <option value="CICS">CICS</option>
+                        <option value="CEAFA">CEAFA</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="">Full Time (FT) or Part Time (PT): </label>
+                      <select
+                        name="FT_or_PT"
+                        id="FT_or_PT"
+                        [(ngModel)]="ft_or_tp"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Full Time or Part Time"
+                        class="form-select"
+                      >
+                        <option value="Full Time">Full Time</option>
+                        <option value="Part Time">Part Time</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="">Academic Rank:</label>
+
+                      <select
+                        name="rank"
+                        id="rank faculty"
+                        [(ngModel)]="rank"
+                        class="form-select"
+                      >
+                        <option value="Instructor I">Instructor I</option>
+                        <option value="Instructor II">Instructor II</option>
+                        <option value="Instructor III">Instructor III</option>
+                        <option value="Assistant Professor I">
+                          Assistant Professor I
+                        </option>
+                        <option value="Assistant Professor II">
+                          Assistant Professor II
+                        </option>
+                        <option value="Assistant Professor III">
+                          Assistant Professor III
+                        </option>
+                        <option value="Associate Professor IV">
+                          Associate Professor IV
+                        </option>
+                        <option value="Associate Professor I">
+                          Associate Professor I
+                        </option>
+                        <option value="Associate Professor II">
+                          Associate Professor II
+                        </option>
+                        <option value="Associate Professor III">
+                          Associate Professor III
+                        </option>
+                        <option value="Associate Professor IV">
+                          Associate Professor IV
+                        </option>
+                        <option value="Associate Professor V">
+                          Associate Professor V
+                        </option>
+
+                        <option value="Professor I">Professor I</option>
+                        <option value="Professor II">Professor II</option>
+                        <option value="Professor III">Professor III</option>
+                        <option value="Professor IV">Professor IV</option>
+                        <option value="Professor V">Professor V</option>
+                        <option value="Professor VI">Professor VI</option>
+                        <option value="Lecturer I">Lecturer I</option>
+                        <option value="Lecturer II">Lecturer II</option>
+                        <option value="Lecturer III">Lecturer III</option>
+                        <option value="Lecturer IV">Lecturer IV</option>
+                        <option value="Lecturer V">Lecturer V</option>
+                        <option value="Lecturer VI">Lecturer VI</option>
+                        <option value="Lecturer VII">Lecturer VII</option>
+                        <option value="Senior Lecturer I">
+                          Senior Lecturer I
+                        </option>
+                        <option value="Senior Lecturer II">
+                          Senior Lecturer II
+                        </option>
+                        <option value="Senior Lecturer III">
+                          Senior Lecturer III
+                        </option>
+                        <option value="Senior Lecturer IV">
+                          Senior Lecturer IV
+                        </option>
+                        <option value="Senior Lecturer V">
+                          Senior Lecturer V
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="">Date of Original Appointment: </label>
+                      <input
+                        type="text"
+                        name="dateOfOriginalAppointment"
+                        id="dateOfOriginalAppointment"
+                        class="form-control"
+                        placeholder="mm/dd/yy"
+                        [(ngModel)]="date_of_original_Appointment"
+                        class="form-control"
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="">Tenure of Appointment/Years of Service:</label>
+                      <input
+                        type="text"
+                        name="tenureOfAppointment"
+                        id="tenureOfAppointment"
+                        class="form-control"
+                        placeholder="Tenure of Appointment"
+                        [(ngModel)]="tenure_of_appointment"
+                        class="form-control"
+                      />
+                    </div>
+                    
+
+                    <div class="col-md-6">
+                      <label for="">Teaching Load:</label>
+                      <input
+                        type="text"
+                        name="teachingLoad"
+                        id="teachingLoad"
+                        class="form-control"
+                        placeholder="Teaching Load"
+                        [(ngModel)]="teaching_load"
+                        class="form-control"
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="">Subjects Taught: </label>
+                      <input
+                        type="text"
+                        name="subjectsTaught"
+                        id="subjectsTaught"
+                        class="form-control"
+                        placeholder="Subjects Taught"
+                        [(ngModel)]="subjects_Taught"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- Pinterest -->
+
+                    <div class="col-md-6">
+                      <label for="">Type: </label>
+                      <select
+                        name="Type"
+                        id="Type"
+                        [(ngModel)]="type"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Type"
+                        class="form-select"
+                        class="form-select"
+                      >
+                        <option value="teaching-staff">Teaching Staff</option>
+                        <option value="non teaching-staff">Non-Teaching Staff</option>
+                      </select>
+                      </div>
+                    <div class="col-md-6">
+                      <label for="">Status of Appointment: </label>
+                     
+                      <select name="sub_type" id="sub_type"
+                          [(ngModel)]="sub_type"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Type"
+                          class="form-select">
+                        <option value="old guest lecturer">Guest Lecturer</option>
+                        <option value="newly hired">Newly Hired</option>
+                        <option value="invited foreign lecturer">Invited Foreign Lecturer</option>
+                      
+                      </select>
+                    </div>
+                    <!-- Pinterest -->
+                    
+                    <div class="col-md-6">
+                      <label for="">Annual Salary:</label>
+                      <input
+                        type="text"
+                        name="annualSalary"
+                        id="annualSalary"
+                        class="form-control"
+                        placeholder="Annual Salary"
+                        [(ngModel)]="annual_salary"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Row END -->
+                </div>
+              </div>
+
+              <!-- change password -->
+              <div class="col-xxl-6">
+                <div class="bg-secondary-soft px-4 py-5 rounded">
+                  <div class="row g-3">
+                    <h4 class="my-4">Educational Attainment</h4>
+
+                    <h5>Baccalaureate</h5>
+                    <!-- Old password -->
+                    <div class="col-md-6">
+                      <label for="">Baccalaureate: </label>
+                      <input
+                        type="text"
+                        name="baccalaureate"
+                        id="baccalaureate"
+                        class="form-control"
+                        placeholder="Baccalaureate"
+                        [(ngModel)]="baccalaureate"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- New password -->
+                    <div class="col-md-6">
+                      <label for="">Ba Spec: </label>
+                      <input
+                        type="text"
+                        name="baSpec"
+                        id="baSpec"
+                        class="form-control"
+                        placeholder="Ba Spec"
+                        [(ngModel)]="ba_spec"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- Confirm password -->
+                    <div class="col-md-12">
+                      <label for=""
+                        >School and Year Graduated (Baccalaureate):
+                      </label>
+                      <input
+                        type="text"
+                        name="schoolGraduated"
+                        id="schoolGraduated"
+                        class="form-control"
+                        placeholder="School(Year)"
+                        [(ngModel)]="school_graduated"
+                        class="form-control"
+                      />
+                    </div>
+                    <h5>Masters</h5>
+                    <!-- Old password -->
+                    <div class="col-md-6">
+                      <label for="">Masters: </label>
+                      <input
+                        type="text"
+                        name="masters"
+                        id="masters"
+                        class="form-control"
+                        placeholder="Masters"
+                        [(ngModel)]="masters"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- New password -->
+                    <div class="col-md-6">
+                      <label for="">Ma Spec: </label>
+                      <input
+                        type="text"
+                        name="maSpec"
+                        id="maSpec"
+                        class="form-control"
+                        placeholder="Ma Spec"
+                        [(ngModel)]="ma_spec"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- Confirm password -->
+                    <div class="col-md-12">
+                      <label for=""
+                        >School and Year Graduated (Masters):
+                      </label>
+                      <input
+                        type="text"
+                        name="schoolGraduated"
+                        id="schoolGraduated"
+                        class="form-control"
+                        placeholder="School(Year)"
+                        [(ngModel)]="school_graduated2"
+                        class="form-control"
+                      />
+                    </div>
+                    <h5>Doctorate</h5>
+                    <!-- Old password -->
+                    <div class="col-md-6">
+                      <label for="">Doctorate: </label>
+                      <input
+                        type="text"
+                        name="doctorate"
+                        id="doctorate"
+                        class="form-control"
+                        placeholder="Doctorate"
+                        [(ngModel)]="doctorate"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- New password -->
+                    <div class="col-md-6">
+                      <label for="">Ph. D. Spec.: </label>
+                      <input
+                        type="text"
+                        name="phdSpec"
+                        id="phdSpec"
+                        class="form-control"
+                        placeholder="Ph. D. Spec."
+                        [(ngModel)]="Ph_D_Spec"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- Confirm password -->
+                    <div class="col-md-12">
+                      <label for="exampleInputPassword3" class="form-label"
+                        >School and Year Graduated</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="schoolgraduated3"
+                        name="schoolgraduated3"
+
+                        placeholder="School(Year)"
+                        [(ngModel)]="school_graduated3"
+                      />
+                    </div>
+
+                    <div class="col-md-12">
+                      <label for="">Professional Licensure Earned: </label>
+                      <input
+                        type="text"
+                        name="professionalLicensureEarned"
+                        id="professionalLicensureEarned"
+                        class="form-control"
+                        placeholder="Professional Licensure Earned"
+                        [(ngModel)]="professional_licensure_earned"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <label for=""
+                      >Educational Attainment:
+                      <mat-icon
+                        (mouseenter)="noteOpen()"
+                        (mouseleave)="noteClose()"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="BS,Masteral,Doctoral,include the no. of units if enrolled only in Masteral or Doctoral."
+                        class="mat-icon text-muted"
+                        style="font-size: 0.9rem"
+                        >help_outline</mat-icon
+                      >
+                      <div class="note" id="note">
+                        BS,Masteral,Doctoral,include the no. of units if
+                        enrolled only in Masteral or Doctoral.
+                      </div>
+                    </label>
+
+                    <textarea
+                      type="text"
+                      name="educationalAttainment"
+                      id="educationalAttainment"
+                      class="form-control"
+                      placeholder="Educational Attainment"
+                      [value]="baccalaureate+', '+masters+', '+doctorate"
+                      [(ngModel)]="educational_attainment"
+                  
+                      class="form-control"
+                      cols="30"
+                      rows="8"
+                      class="form-control"
+                    >
+                    </textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row END -->
+            <!-- button -->
+          </form>
+          <!-- Form END -->
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close class="btn-primary">Close</button>
+  <button mat-raised-button (click)="addEmployee()" class="btn-success">
+    Save
+  </button>
+</mat-dialog-actions>

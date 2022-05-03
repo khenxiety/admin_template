@@ -65,8 +65,8 @@
       <td mat-cell *matCellDef="let row">{{row.educational_attainment}}</td>
     </ng-container>
     <ng-container matColumnDef="school_graduated">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>School Graduated</th>
-      <td mat-cell *matCellDef="let row">{{row.school_graduated}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>School and Year Graduated</th>
+      <td mat-cell *matCellDef="let row">{{row.school_graduated}},{{row.school_graduated_2}},{{row.school_graduated_3}}</td>
     </ng-container>
     <ng-container matColumnDef="rank">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank</th>
